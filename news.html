@@ -1,1 +1,721 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .parent {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .button {
+            border-radius: 30px;
+            background-color: #5c544d;
+            color: beige;
+            padding: 10px;
+            border: none;
+            width: 150px;
+            font-size: large;
+
+        }
+
+        img {
+            width: 200px;
+        }
+
+        .list {
+            display: flex;
+            gap: 30px;
+            font-weight: bolder;
+            list-style: none;
+
+
+
+        }
+
+
+        .icon {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+        }
+
+        .button:hover {
+            background-color: #a0876e;
+        }
+
+        a:hover {
+            color: #979591;
+            text-decoration: underline;
+
+        }
+
+        .btn:hover {
+            color: #a0876e;
+        }
+
+        a {
+            color: #5c544d;
+            text-decoration: none;
+
+        }
+
+        /* header section styling ended */
+
+        .foot {
+            background-color: #4c4845;
+
+
+        }
+
+        .foott {
+            color: #ffffff;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: space-around;
+            padding: 100px;
+
+        }
+
+        .circle:hover {
+            background-color: solid blue;
+        }
+
+        .line-three {
+            border: 1px solid #979591;
+            width: 90%;
+            margin: auto;
+            margin-bottom: 30px;
+
+
+        }
+
+        .btn-two:hover {
+            background-color: #ffffff;
+
+        }
+
+
+
+
+
+
+
+        .latest-news-section {
+            width: 100%;
+            background-color: #f4f4f4;
+            box-sizing: border-box;
+            background-color: #f4f4f5;
+            padding: 50px 0px;
+            margin: 0%45px 0px;
+        }
+
+        .latest-news-container {
+            max-width: 1292px;
+            margin: 0 auto;
+            padding: 62px 0 58px;
+            box-sizing: border-box;
+
+        }
+
+        /* Main Heading */
+        .latest-news-container h1 {
+            margin: 0;
+            padding: 0;
+            color: #111111;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 27px;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .breadcrumb a {
+            color: #a97848;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover,
+        .breadcrumb a:focus {
+            color: #7e5737;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-arrow {
+            color: #555555;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 10px;
+            position: relative;
+            top: -1px;
+        }
+
+        .breadcrumb span:last-child {
+            color: #171717;
+        }
+
+        /* ================================
+           Tablet
+        ================================= */
+
+        @media (max-width: 1350px) {
+            .latest-news-container {
+                max-width: calc(100% - 60px);
+            }
+        }
+
+        /* ================================
+           Mobile
+        ================================= */
+
+        @media (max-width: 767px) {
+            .latest-news-container {
+                max-width: 100%;
+                padding: 42px 20px 40px;
+            }
+
+            .latest-news-container h1 {
+                font-size: 28px;
+                line-height: 1.2;
+            }
+
+            .breadcrumb {
+                margin-top: 20px;
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .breadcrumb-arrow {
+                font-size: 15px;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .latest-news-container {
+                padding: 35px 16px 34px;
+            }
+
+            .latest-news-container h1 {
+                font-size: 26px;
+            }
+
+            .breadcrumb {
+                margin-top: 18px;
+                font-size: 10px;
+                gap: 7px;
+            }
+        }
+
+        /* ============================== LATEST NEWS SECTION ============================== */
+        .latest-news {
+            width: 100%;
+            background: #ffffff;
+            padding: 60px 0 0;
+            box-sizing: border-box;
+        }
+
+        .latest-news * {
+            box-sizing: border-box;
+        }
+
+        .latest-news-container {
+            width: 100%;
+            max-width: 1292px;
+            margin: auto;
+            padding: 60px 0px;
+        }
+
+        /* ============================== CARDS GRID ============================== */
+        .latest-news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 29px;
+            align-items: stretch;
+        }
+
+        /* ============================== CARD ============================== */
+        .latest-news-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border-radius: 9px;
+            overflow: hidden;
+            min-width: 0;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.025);
+        }
+
+        /* ============================== CARD IMAGE ============================== */
+        .latest-news-card-image {
+            width: 100%;
+            height: 309px;
+            overflow: hidden;
+            background: #eeeeee;
+        }
+
+        .latest-news-card-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* ============================== CARD CONTENT ============================== */
+        .latest-news-card-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 29px 30px 31px;
+        }
+
+        /* ============================== CARD TITLE ============================== */
+        .latest-news-card h2 {
+            margin: 0 0 22px;
+            padding: 0;
+            color: #080808;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: 0;
+        }
+
+        /* ============================== CARD DESCRIPTION ============================== */
+        .latest-news-card p {
+            margin: 0;
+            padding: 0;
+            color: #30445a;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.75;
+            letter-spacing: 0;
+        }
+
+        /* ============================== META ============================== */
+        .latest-news-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .latest-news-meta span {
+            color: #111827;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.2;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .latest-news-meta .separator {
+            color: #111827;
+            font-size: 13px;
+        }
+
+        /* ============================== HOVER EFFECT ============================== */
+        .latest-news-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .latest-news-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .latest-news-card-image img {
+            transition: transform 0.4s ease;
+        }
+
+        .latest-news-card:hover .latest-news-card-image img {
+            transform: scale(1.02);
+        }
+
+        /* ============================== LARGE TABLET ============================== */
+        @media (max-width: 1350px) {
+            .latest-news-container {
+                max-width: calc(100% - 60px);
+            }
+
+            .latest-news-card-image {
+                height: 300px;
+            }
+        }
+
+        /* ============================== TABLET ============================== */
+        @media (max-width: 991px) {
+            .latest-news {
+                padding-top: 45px;
+            }
+
+            .latest-news-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .latest-news-card-image {
+                height: 270px;
+            }
+
+            .latest-news-card-content {
+                padding: 26px 25px 28px;
+            }
+
+            .latest-news-card h2 {
+                font-size: 20px;
+            }
+        }
+
+        /* ============================== MOBILE ============================== */
+        @media (max-width: 767px) {
+            .latest-news {
+                padding: 35px 0 0;
+            }
+
+            .latest-news-container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .latest-news-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .latest-news-card-image {
+                height: 260px;
+            }
+
+            .latest-news-card-content {
+                padding: 25px 24px 27px;
+            }
+
+            .latest-news-card h2 {
+                margin-bottom: 18px;
+                font-size: 20px;
+                line-height: 1.3;
+            }
+
+            .latest-news-card p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .latest-news-meta {
+                padding-top: 20px;
+            }
+        }
+
+        /* ============================== SMALL MOBILE ============================== */
+        @media (max-width: 480px) {
+            .latest-news {
+                padding-top: 25px;
+            }
+
+            .latest-news-container {
+                padding: 0 15px;
+            }
+
+            .latest-news-grid {
+                gap: 20px;
+            }
+
+            .latest-news-card-image {
+                height: 230px;
+            }
+
+            .latest-news-card-content {
+                padding: 22px 20px 24px;
+            }
+
+            .latest-news-card h2 {
+                font-size: 19px;
+            }
+
+            .latest-news-card p {
+                font-size: 14px;
+                line-height: 1.65;
+            }
+
+            .latest-news-meta {
+                gap: 8px;
+            }
+
+            .latest-news-meta span {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- /////////////header code start////////////////////// -->
+    <div class="parent">
+        <img src="./logo-dark.svg">
+
+        <ul class="list">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./services.html">SERVICES</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./news.html">NEWS</a></li>
+            <li><a href="./contact.html">CONTACT</a></li>
+
+        </ul>
+        <div class="icon">
+            <i class="fa fa-search btn" aria-hidden="true"></i>
+            <button class="button">+123 456 7890</button>
+
+        </div>
+    </div>
+    <!-- ////////////////////////////header code ended/////////////////////////////// -->
+
+    <!-- ///////////////////////////////hero section startred///////////////////// -->
+
+    <section class="latest-news-section" aria-labelledby="latest-news-title">
+        <div class="latest-news-container">
+
+            <h1 id="latest-news-title">Latest News</h1>
+
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">HOME</a>
+                <span class="breadcrumb-arrow" aria-hidden="true">›</span>
+                <span aria-current="page">LATEST NEWS</span>
+            </nav>
+
+        </div>
+    </section>
+    <!-- //////card section code started/////////////////// -->
+    <section>
+        <div class="latest-news-container">
+            <h1 id="latest-news-heading"
+                style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+                Latest News </h1>
+            <div class="latest-news-grid"> <!-- Card 1 -->
+                <article class="latest-news-card">
+                    <div class="latest-news-card-image"> <img src="./img/one.jpeg"
+                            alt="Professional woman in a modern office" loading="lazy"> </div>
+                    <div class="latest-news-card-content">
+                        <h2> Quis Lectus Nulla Volutpat Diamut Venenatis </h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ultrices eros in cursus turpis massa... </p>
+                        <div class="latest-news-meta"> <span>John Doe</span> <span class="separator">/</span>
+                            <span>October
+                                22, 2021</span>
+                        </div>
+                    </div>
+                </article> <!-- Card 2 -->
+                <article class="latest-news-card">
+                    <div class="latest-news-card-image"> <img src="./img/two.jpeg"
+                            alt="Newspaper representing latest news" loading="lazy"> </div>
+                    <div class="latest-news-card-content">
+                        <h2> Venenatis Lectus Magna Fringilla Porttitor </h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ultrices eros in cursus turpis massa... </p>
+                        <div class="latest-news-meta"> <span>John Doe</span> <span class="separator">/</span>
+                            <span>October
+                                22, 2021</span>
+                        </div>
+                    </div>
+                </article> <!-- Card 3 -->
+                <article class="latest-news-card">
+                    <div class="latest-news-card-image"> <img src="./img/three.jpeg"
+                            alt="Business professionals discussing documents" loading="lazy"> </div>
+                    <div class="latest-news-card-content">
+                        <h2> Massa Tincidunt Nunc Pulvinar Sapien Ullamcorper </h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. A arcu cursus vitae congue. Nullam... </p>
+                        <div class="latest-news-meta"> <span>John Doe</span> <span class="separator">/</span>
+                            <span>October
+                                22, 2021</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="latest-news-container">
+            <h1 id="latest-news-heading"
+                style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+                Latest News </h1>
+            <div class="latest-news-grid"> <!-- Card 1 -->
+                <article class="latest-news-card">
+                    <div class="latest-news-card-image"> <img src="./img/four.jpeg"
+                            alt="Professional woman in a modern office" loading="lazy"> </div>
+                    <div class="latest-news-card-content">
+                        <h2> Quis Lectus Nulla Volutpat Diamut Venenatis </h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ultrices eros in cursus turpis massa... </p>
+                        <div class="latest-news-meta"> <span>John Doe</span> <span class="separator">/</span>
+                            <span>October
+                                22, 2021</span>
+                        </div>
+                    </div>
+                </article> <!-- Card 2 -->
+                <article class="latest-news-card">
+                    <div class="latest-news-card-image"> <img src="./img/five.jpeg"
+                            alt="Newspaper representing latest news" loading="lazy"> </div>
+                    <div class="latest-news-card-content">
+                        <h2> Venenatis Lectus Magna Fringilla Porttitor </h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ultrices eros in cursus turpis massa... </p>
+                        <div class="latest-news-meta"> <span>John Doe</span> <span class="separator">/</span>
+                            <span>October
+                                22, 2021</span>
+                        </div>
+                    </div>
+                </article> <!-- Card 3 -->
+                <article class="latest-news-card">
+                    <div class="latest-news-card-image"> <img src="./img/six.jpeg"
+                            alt="Business professionals discussing documents" loading="lazy"> </div>
+                    <div class="latest-news-card-content">
+                        <h2> Massa Tincidunt Nunc Pulvinar Sapien Ullamcorper </h2>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. A arcu cursus vitae congue. Nullam... </p>
+                        <div class="latest-news-meta"> <span>John Doe</span> <span class="separator">/</span>
+                            <span>October
+                                22, 2021</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- foooooooooooter coder started -->
+    <footer class="foot">
+        <div class="foott">
+
+            <div>
+                <img src="./img/logo.svg" alt="" style="height: 5vh;">
+
+                <p style="color: #979591; font-size: 16px; line-height: 1.5;">Egestas purus viverra accumsan in nis in
+                    <br>
+                    metus dictum at tempor commodo sagittis nisl rhoncus mattis <br> rhoncus urna neque <br> viverra.
+                </p>
+
+                <div class="circle" style="color: #ffffff;display: flex; gap: 30px; font-size: 20px;">
+                    <i class="fa fa-facebook"
+                        style="  background-color: #979591 ; padding: 10px; border-radius: 50px;"></i>
+                    <i class="fa fa-twitter"
+                        style="  background-color: #979591 ; padding: 10px; border-radius: 50px;"></i>
+                    <i class="fa fa-instagram"
+                        style="  background-color: #979591; padding: 10px; border-radius: 50px;"></i>
+                    <i class="fa fa-youtube"
+                        style="  background-color: #979591 ; padding: 10px; border-radius: 50px;"></i>
+
+                </div>
+
+
+            </div>
+            <div style="line-height: 1.9;">
+                <h3>Overview</h3>
+
+                <li style="color: #979591;">Home</li>
+                <li style="color: #979591;">Services</li>
+                <li style="color: #979591;">About Us</li>
+                <li style="color: #979591;">Blog</li>
+
+            </div>
+
+
+            <div style="line-height: 1.9;">
+
+                <h3>Information</h3>
+
+                <li style="color: #979591;">FAQ</li>
+                <li style="color: #979591;">Site Map</li>
+                <li style="color: #979591;">Cookie Policy</li>
+                <li style="color: #979591;">Contact Us</li>
+
+
+
+
+            </div>
+
+
+            <div>
+                <h3>Head Office</h3>
+                <p style="color: #979591;">304 North Cardinal St. <br> Dorchester Center, <br> MA 02124</p>
+
+
+                <div>
+                    <div>
+                        <button class="square" style=" padding:30px; background-color: #3a352e; border: none;border-radius: 10px; margin-bottom: 10px;font-size: 15px;color:#ffffff;">
+                            <i class="fa fa-phone" style="color: #979591; margin-right: 20px;"></i>(123) 456
+                            789</button>
+                    </div>
+                    <button class="bt-two"
+                        style=" display: block;padding:30px;background-color: #3a352e;border: none; border-radius: 10px;font-size: 15px;color: #ffffff;">
+                        <i class="fa fa-envelop" style="color: #979591;"></i>
+                        info@mymail.com
+                    </button>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="line-three"></div>
+
+        <div style="display: flex;justify-content: space-around;align-items: end; color: #979592;">
+            <h5>Copyright © 2026 - WordPress Theme by CreativeThemes
+                Terms & Conditions | Privacy Policy</h5>
+            <h5>Copyright © 2026 - WordPress Theme by CreativeThemes
+                Terms & Conditions | Privacy Policy</h5>
+        </div>
+
+
+
+
+
+    </footer>
+
+
+
+
+    <!-- ////////////////////////// contact section code ended////////////////////////////// -->
+
+
+</body>
+
+</html>
